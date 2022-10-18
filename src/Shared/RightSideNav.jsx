@@ -1,9 +1,11 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 
 const RightSideNav = () => {
     return (
-        <div>
-            RightSideNav
+        <div className="d-grid gap-2">
+            <Button variant="outline-primary">Primary</Button>
+            <Button variant="outline-dark">Dark</Button>
         </div>
     );
 };

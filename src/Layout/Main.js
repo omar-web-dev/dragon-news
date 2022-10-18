@@ -9,14 +9,16 @@ import RightSideNav from '../Shared/RightSideNav';
 const Main = () => {
     return (
         <div>
-            <Container>
+            <div>
+                <Header />
+            </div>
+            {/* <Container>  */}
                 <Row>
-                    <Header/>
-                    <Col lg-2><LeftSideNav/></Col>
-                    <Col lg-7><Outlet/></Col>
-                    <Col lg-3><RightSideNav/></Col>
+                    <Col className='lg-2 border'><LeftSideNav/></Col>
+                    <Col className='lg-8 border'><Outlet/></Col>
+                    <Col className='lg-2 border'><RightSideNav/></Col>
                 </Row>
-            </Container>
+            {/* </Container> */}
         </div>
     );
 };
