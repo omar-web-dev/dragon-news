@@ -11,7 +11,7 @@ const LeftSideNav = () => {
     return (
         <div>
             <h1>Category {categorize.length}</h1>
-            {categorize.map(category => <li><Link to={`category:${category.id}`}> {category.name} </Link></li>)}
+            {categorize.map(category => <li key={category.id}><Link to={`category:${category.id}`} > {category.name} </Link></li>)}
             
         </div>
     );

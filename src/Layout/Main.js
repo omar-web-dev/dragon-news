@@ -1,6 +1,5 @@
-import { Container } from 'postcss';
 import React from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
 import Header from '../Shared/Header';
 import LeftSideNav from '../Shared/LeftSideNav';
@@ -12,13 +11,13 @@ const Main = () => {
             <div>
                 <Header />
             </div>
-            {/* <Container>  */}
+            <Container> 
                 <Row>
                     <Col className='lg-2 border'><LeftSideNav/></Col>
                     <Col className='lg-8 border'><Outlet/></Col>
                     <Col className='lg-2 border'><RightSideNav/></Col>
                 </Row>
-            {/* </Container> */}
+            </Container>
         </div>
     );
 };
