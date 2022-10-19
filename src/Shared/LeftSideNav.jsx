@@ -11,8 +11,13 @@ const LeftSideNav = () => {
     return (
         <div>
             <h1>Category {categorize.length}</h1>
-            {categorize.map(category => <li key={category.id}><Link to={`category:${category.id}`} > {category.name} </Link></li>)}
-            
+            <ul className='p-0'>
+            {categorize.map(category => 
+                <li key={category.id} className="list-group">
+                    <Link  className='list-group-item' to={`category:${category.id}`} > {category.name} </Link>
+                </li>
+            )}
+            </ul>
         </div>
     );
 };
