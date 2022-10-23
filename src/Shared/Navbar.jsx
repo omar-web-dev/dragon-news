@@ -13,27 +13,28 @@ const Navbars = () => {
     const handlerLogOut = () => {
         logOut()
         .then(() => {
-            console.log('sing out successfully');
         })
         .catch((error) => {
-            console.log(error);
         })
     }
 
-    // console.log(user?.emailVerified);
     // const {uid, email, displayName, photoURL} = user
     return (
         <>
-            <Navbar bg="dark" variant="dark">
+            <Navbar className='navbar navbar-expand-lg bg-light' bg="dark" variant="dark">
                 <Container className="d-flex mx-auto">
                     <Navbar.Brand to="/">Quizzes</Navbar.Brand>
-                    <Nav className="me-auto">
-                        <Nav  to="/">Home</Nav>
+                    <Nav className="me-auto navbar-nav me-auto mb-2 mb-lg-0">
+                    <Nav.Link href='#'>Home</Nav.Link>
                         <Link to="statistics">Statistics</Link>
                         <Link to="blog">Blog</Link>
                         {user?.uid ?
                             <Nav className="me-auto">
-                                <Image style={{width : '40px', height: '40px'}} roundedCircle src={user.photoURL} />
+                                {user.photoURL ?
+                                <Image style={{width : '40px', height: '40px'}} roundedCircle src={user?.photoURL} />
+                                : 
+                                <Image style={{width : '40px', height: '40px'}} roundedCircle src={'https://avatars.githubusercontent.com/u/108586297?s=48&v=4'} />
+                                }
                                 <Button onClick={handlerLogOut} >Log Out</Button>
                                 <Link to="#">{user?.displayName}</Link>
                             </Nav>

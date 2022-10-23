@@ -10,16 +10,15 @@ import { AuthContext } from '../Context/AuthProvider';
 const RightSideNav = () => {
     const [error, setError] = useState('')
     const [user, setUser] = useState('')
-    console.log(error);
 
     const {googleLongIn} = useContext(AuthContext)
     const provider = new GoogleAuthProvider();
 
-    const handelGoogleLogIn =(e)=>{
+    const handelGoogleLogIn =()=>{
         googleLongIn(provider)    
         .then((result) => {
-            const user = result.user;
-            console.log(user);
+            const thisUser = result.user;
+            setUser(thisUser)
           }).catch((error) => {
             // const errorCode = error.code;
             const errorMessage = error.message;
@@ -30,7 +29,7 @@ const RightSideNav = () => {
     return (
         <>
             <div className="d-grid gap-2">
-                <Button onSubmit={handelGoogleLogIn} variant="outline-primary">Google <ImGoogle /></Button> {/** <ImGoogle/> */}
+                <Button onClick={handelGoogleLogIn} variant="outline-primary">Google <ImGoogle /></Button> {/** <ImGoogle/> */}
                 <Button variant="outline-dark">Github <FaGithub /></Button>
             </div>
             <ul className='p-0'>

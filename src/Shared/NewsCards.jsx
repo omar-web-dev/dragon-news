@@ -10,7 +10,7 @@ const NewsCards = ({ news }) => {
     const { name, img } = author
     return (
         <div>
-            <Card className='mb-5'>
+            <Card className='mb-5 w-100'>
                 <Card.Header className='d-flex justify-content-between align-items-center'>
                     <div className='d-flex align-items-center'>
                         <Image roundedCircle style={{ height: "60px" }} src={img} />

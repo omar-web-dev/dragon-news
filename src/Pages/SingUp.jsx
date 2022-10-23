@@ -4,7 +4,8 @@ import { AuthContext } from '../Context/AuthProvider';
 
 const SingUp = () => {
 
-    const {createUser} = useContext(AuthContext)
+    // const {singUpEmailPassword} = useContext(AuthContext)
+    const [user, setUser] = useState('')
     const [email, setEmail] = useState('')
     const [error, setError] = useState('')
 
@@ -15,22 +16,21 @@ const SingUp = () => {
         const photo_url = from.photo_url.value
         const email = from.email.value
         const password = from.password.value
-        console.log( email, password);
 
         if (!/^\S+@\S+\.\S+$/.test(email)) {
             setError('Please send a valid email')
             return;
         }
 
-        createUser(name, photo_url, email, password)
-        .then(result =>{
-            const user = result.user
-            console.log(user);
-        })
-        .catch(error => setError(error))
+        // singUpEmailPassword(email, password)
+        // .then(result =>{
+        //     const user = result.user
+        //     setUser(user)
+        // })
+        // .catch(error => setError(error))
 
-        setError('')
-        setEmail(email)
+        // setError('')
+        // setEmail(email)
     }
     return (
         <div className='sign-up-page'>
