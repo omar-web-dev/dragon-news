@@ -16,7 +16,7 @@ export const routes = createBrowserRouter([
         children : [
             {
                 path: '/', element : <Home/>,
-                loader : ()=> fetch(`http://localhost:5000/news`),
+                loader : ()=> fetch(`https://dragon-news-server-chi-ten.vercel.app/news`),
             },
             {
                 path: 'home', 
@@ -32,11 +32,11 @@ export const routes = createBrowserRouter([
             },
             {
                 path: 'category/:id', element : <Category />,
-                loader :({params}) => fetch(`http://localhost:5000/news-category/${params.id}`),
+                loader :({params}) => fetch(`https://dragon-news-server-chi-ten.vercel.app/news-category/${params.id}`),
             },
             {
                 path: 'news/:id', element : <Details/>,
-                loader :({params}) => fetch(`http://localhost:5000/news/${params.id}`)
+                loader :({params}) => fetch(`https://dragon-news-server-chi-ten.vercel.app/news/${params.id}`)
 
             }
         ],
